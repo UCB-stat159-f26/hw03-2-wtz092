@@ -46,3 +46,14 @@ testthat::test_that("player metadata dates parse without web access", {
     "19810926"
   )
 })
+
+testthat::test_that("player names allow hyphens and apostrophes", {
+  testthat::expect_equal(
+    tenniscareer:::normalize_player_name("Jo-Wilfried Tsonga"),
+    "JoWilfriedTsonga"
+  )
+  testthat::expect_equal(
+    tenniscareer:::normalize_player_name("O'Connell"),
+    "OConnell"
+  )
+})

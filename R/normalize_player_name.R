@@ -3,11 +3,13 @@ normalize_player_name <- function(player_name) {
       is.na(player_name)) {
     stop("`player_name` must be one non-missing character string.", call. = FALSE)
   }
-  name <- trimws(player_name)
-  if (!grepl("^[A-Za-z]+([[:space:]][A-Za-z]+)*$", name)) {
-    stop("`player_name` must contain only letters and spaces.", call. = FALSE)
+  name <- gsub("[-']", " ", trimws(player_name))
+  if (!grepl("^[A-Za-z ]+$", name) || !grepl("[A-Za-z]", name)) {
+    stop("`player_name` must contain letters, spaces, hyphens, or apostrophes.",
+         call. = FALSE)
   }
-  if (!grepl("[[:space:]]", name)) return(name)
+  if (!grepl(" ", name, fixed = TRUE)) return(name)
   words <- strsplit(tolower(name), "[[:space:]]+")[[1]]
-  paste0(tools::toTitleCase(words), collapse = "")
+  words <- paste0(toupper(substr(words, 1, 1)), substring(words, 2))
+  paste0(words, collapse = "")
 }
