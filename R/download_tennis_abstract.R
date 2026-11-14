@@ -44,10 +44,7 @@ get_profile_url <- function(player_slug, is_wta) {
 
 download_player_birth_date <- function(player_slug, is_wta) {
   metadata_url <- if (is_wta) {
-    sprintf(
-      "https://www.tennisabstract.com/jsmatches/%s.js",
-      player_slug
-    )
+    sprintf("https://www.tennisabstract.com/jsmatches/%s.js", player_slug)
   } else {
     get_profile_url(player_slug, is_wta)
   }
@@ -56,9 +53,9 @@ download_player_birth_date <- function(player_slug, is_wta) {
   if (is.na(birth_date)) {
     birth_date <- as.Date(date_text, format = "%d-%b-%Y")
   }
-  if (is.na(birth_date)) {
-    stop(sprintf("Could not find a birth date for '%s'.", player_slug),
-         call. = FALSE)
-  }
+  if (is.na(birth_date)) stop(
+    sprintf("Could not find a birth date for '%s'.", player_slug),
+    call. = FALSE
+  )
   birth_date
 }
