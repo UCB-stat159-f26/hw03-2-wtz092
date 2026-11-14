@@ -39,3 +39,10 @@ testthat::test_that("player names normalize without web access", {
     "letters"
   )
 })
+
+testthat::test_that("player metadata dates parse without web access", {
+  testthat::expect_equal(
+    tenniscareer:::extract_birth_date("var dob = 19810926;"),
+    "19810926"
+  )
+})
