@@ -1,0 +1,36 @@
+AI Documentation for HW3
+
+Tool used:
+ChatGPT Codex (GPT-5)
+
+My work and use of AI:
+This package builds on my own HW2 project, including the Tennis Abstract data
+source, the original Serena Williams data-cleaning workflow, and the plotting
+goal. I used ChatGPT Codex primarily as a coding reviewer and debugging
+assistant while converting that existing work into a reusable R package.
+
+Main types of prompts:
+- I shared my HW2 code and asked for help identifying changes needed to turn
+  the workflow into package functions.
+- I asked for targeted help debugging errors I encountered while retrieving,
+  parsing, and cleaning Tennis Abstract data.
+- I asked for suggestions about handling the different ATP and WTA file
+  formats, organizing small helper functions, and writing local tests.
+- I asked for feedback on whether the final package satisfied the HW3
+  requirements.
+
+How I used the suggestions:
+- I decided which functions, inputs, outputs, and package structure to use.
+- I adapted my prior HW2 workflow and integrated revisions into the files in
+  R/ myself.
+- I used debugging suggestions to resolve JavaScript parsing and player
+  birth-date retrieval issues.
+- I used feedback to revise tests in tests/testthat/, improve README.md, and
+  check Git and installation steps.
+
+Verification and responsibility:
+I ran the code myself throughout development, inspected the returned data
+frames and plots, and tested the package with both Rafael Nadal and Serena
+Williams. I ran the local offline test suite and verified installation from
+GitHub. I reviewed the final code, made the final decisions about what to
+include, and can explain the purpose and behavior of each submitted function.
