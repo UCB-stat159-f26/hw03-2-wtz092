@@ -18,3 +18,8 @@ read_career_js <- function(file_path) {
     simplifyVector = FALSE
   )
 }
+
+is_wta_career <- function(rows) {
+  values <- extract_column(rows, 17)
+  any(grepl("^\\d{8}$", values))
+}
