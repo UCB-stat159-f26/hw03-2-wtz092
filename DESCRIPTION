@@ -1,0 +1,16 @@
+Package: tenniscareer
+Title: Retrieve and Plot Tennis Career Match Data
+Version: 0.1.0
+Authors@R:
+    person("Wutian", "Zhong", email = "wtz092@berkeley.edu",
+           role = c("aut", "cre"))
+Description: Retrieves career match data from Tennis Abstract,
+    cleans the data, and creates an age-based match scatter plot.
+License: MIT
+Encoding: UTF-8
+Imports:
+    ggplot2,
+    jsonlite
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
